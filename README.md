@@ -2,7 +2,7 @@
 Team Name: Dressed-Up
 
 Team Roles:
-  PM: Tess Nunes
+  PM: Caitlin Moeykens
   Designer: Caitlin Moeykens
   Dev 1: Clara Scalzer
   Dev 2: Grace Murray
