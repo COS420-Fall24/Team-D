@@ -14,7 +14,7 @@ Team Roles:
     &ensp;&ensp;Thursday:    4:50-5:25 Sprint Kickoff/Task managment (45+m) 5:30-6:00 in case meeting time\
     &ensp;&ensp;Friday:      N/A\
     &ensp;&ensp;Saturday:    5:00-5:15 Scrum stand-up (15m)\
-    &ensp;&ensp;Sunday:      (Backup scrum stand-up/extra synchronous)\
+    &ensp;&ensp;Sunday:      (Backup scrum stand-up/extra synchronous)
 
 Problem Statement 1:  
 On average, women spend one year in their lifetime deciding what to wear. (Source). It would be helpful to have an app that could reduce the amount of time deciding what to wear. For example it takes an average of 16 minutes to choose an outfit every weekday morning. Having a tool to reduce the amount of time and stress used to choose an outfit would allow more time to sleep, do something in the morning, or pick up a hobby. How can we build an app that take your closet and creates outfits that you can wear and takes the weather into account?
