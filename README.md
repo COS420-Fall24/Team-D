@@ -8,7 +8,7 @@
   &ensp;&ensp;**Dev 3:** Tess Nunes
 
  ## Team Schedule:  
-  Monday: &ensp;&ensp;&ensp;&ensp;&ensp;3:10-3:25 Scrum stand-up (15m)  
+  Monday: &ensp;&ensp;&ensp;&ensp;&ensp;5:05 - 5:20 Scrum stand-up (15m)  
   Tuesday: &ensp;&ensp;&ensp;&ensp;&ensp;4:50-5:25 Sprint Kickoff/Task managment (45+m) 5:30-6:00 in case meeting time  
   Wednesday:  
   Thursday:&ensp;&ensp;&ensp;&ensp;&ensp;4:50-5:25 Sprint Kickoff/Task managment (45+m) 5:30-6:00 in case meeting time  
