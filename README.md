@@ -17,7 +17,7 @@
   Sunday: &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;5:00-7:00 Overflow
 
 ## Mission Statement:
-Empowerment through everyday wear
+StyleNest: Empowerment through everyday wear
 
 ## Problem Statements:
 ### Problem Statement 1:  
