@@ -26,3 +26,9 @@ On average, women spend one year in their lifetime deciding what to wear. (Sourc
 ### Problem Statement 2:  
 People take too long choosing what to wear in the morning and are overwhelmed by decision fatigue. For example, when people are already stressed about their day, having to pick out pieces to plan an outfit is overwhelming and tedious. People may try to plan out their outfits the night before, but at night people are often exhausted and want to go to bed as soon as possible. Prior solutions try to address time efficiency, but fail to address decision fatigue and the steps involving an outfit. How can we design a convenient app to consider the weather, your wardrobe, and your preferences?
 
+### Running the Code:
+In VS Code, run commands
+- git pull https://github.com/COS420-Fall24/Team-D.git
+- cd Team-D
+- cd react-lab
+- npm run start
