@@ -6,12 +6,13 @@ import {useSignInWithGoogle} from "react-firebase-hooks/auth";
 
 
 function App() {
-  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth); // user state (user information), loading (t/f on if they are signing in, error if something goes wrong
-
+  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth); 
+  
   return (
     <div className="App">
       <div>
       <button onClick={() => signInWithGoogle()}>Sign In</button>
+      {(user)?<div>{user.user.displayName}</div>:<div>Not logged in</div>}
       </div>
     </div>
   );
