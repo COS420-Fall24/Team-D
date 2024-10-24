@@ -9,7 +9,7 @@
 
  ## Team Schedule:  
   Monday: &ensp;&ensp;&ensp;&ensp;&ensp;5:05 - 5:20 Scrum stand-up (15m)  
-  Tuesday:
+  Tuesday: 
   Wednesday: &ensp;&ensp;&ensp;&ensp;&ensp;4:50 - 5:25 Sprint Kickoff/Task managment (45+m) 5:30-6:00 in case meeting time  
   Thursday:&ensp;&ensp;&ensp;&ensp;&ensp;4:50-5:25 Sprint Kickoff/Task managment (45+m) 5:30-6:00 in case meeting time  
   Friday:  
