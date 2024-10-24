@@ -3,7 +3,7 @@
 
 ## Team Roles:  
   &ensp;&ensp;**PM and Designer:** Caitlin Moeykens  
-  &ensp;&ensp;**Dev 1:** Clara Scalzer  
+  &ensp;&ensp;**Co-PM and Dev 1:** Clara Scalzer  
   &ensp;&ensp;**Dev 2:** Grace Murray  
   &ensp;&ensp;**Dev 3:** Tess Nunes
 
