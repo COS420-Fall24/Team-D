@@ -10,11 +10,11 @@
  ## Team Schedule:  
   Monday: &ensp;&ensp;&ensp;&ensp;&ensp;5:05 - 5:20 Scrum stand-up (15m)  
   Tuesday:   
-  Wednesday: &ensp;&ensp;&ensp;&ensp;&ensp;4:50 - 5:25 Sprint Kickoff/Task managment (45+m) 5:30-6:00 in case meeting time  
+  Wednesday: &ensp;&ensp;4:50 - 5:25 Sprint Kickoff/Task managment (45+m) 5:30-6:00 in case meeting time  
   Thursday:&ensp;&ensp;&ensp;&ensp;&ensp;4:50-5:25 Sprint Kickoff/Task managment (45+m) 5:30-6:00 in case meeting time  
   Friday:  
-  Saturday: &ensp;&ensp;&ensp;&ensp;&ensp;5:00-5:15 Scrum stand-up (15m)  
-  Sunday: &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;5:00-7:00 Overflow
+  Saturday:&ensp;&ensp;&ensp;&ensp;&ensp;5:00-5:15 Scrum stand-up (15m)  
+  Sunday:&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;5:00-7:00 Overflow
 
 ## Mission Statement:
 StyleNest: Empowerment through everyday wear
