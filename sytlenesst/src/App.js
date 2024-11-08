@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
+
+import {auth} from "./firebase-config";
+import {useSignInWithGoogle} from "react-firebase-hooks/auth";
+
+
+
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+ const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+ return (
+   <div className="App">
+     <div>
+       <button onClick={() => signInWithGoogle()}>Sign In</button>
+       {(user)?<div>{user.user.displayName}</div>:<div>Not logged in</div>}
+     </div>
+   </div>
+ );
 }
+
 
 export default App;
