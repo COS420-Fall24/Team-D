@@ -23,6 +23,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+    - run: cd Stylenesst && npm ci
+    - run: cd Stylenesst && npm run build --if-present
+    - run: cd Stylenesst && npm test
