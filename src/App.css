@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #a3bed1;
 }
 
 .App-logo {
@@ -14,7 +15,7 @@
 }
 
 .App-header {
-  background-color: #faebd7;
+  background-color: #a3bed1;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -27,6 +28,46 @@
 .App-link {
   color: #faebd7;
 }
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; 
+  background-color: #a3bed1; 
+}
+
+
+.login-title {
+  font-size: 3rem; 
+  font-weight: bold;
+  color: #3a3a3a; 
+  margin-bottom: 20px; 
+}
+
+
+.welcome-message {
+  font-size: 1.5rem;
+  color: #555;
+  margin-bottom: 20px; 
+}
+
+.login-button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  color: white;
+  background-color: #3a3a3a; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #2b2b2b; 
+}
+
 
 @keyframes App-logo-spin {
   from {
