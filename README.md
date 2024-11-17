@@ -30,5 +30,4 @@ People take too long choosing what to wear in the morning and are overwhelmed by
 In VS Code, run commands
 - git pull https://github.com/COS420-Fall24/Team-D.git
 - cd Team-D
-- cd react-lab
-- npm run start
+- npm start
