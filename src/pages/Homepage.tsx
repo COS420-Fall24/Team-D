@@ -1,9 +1,10 @@
 import React from 'react';
 
+interface HomepageProps {
+  onNavigateToCalendar: () => void; // Prop to navigate to Calendar page
+}
 
-
-const Homepage: React.FC = () => {
-
+const Homepage: React.FC<HomepageProps> = ({ onNavigateToCalendar }) => {
 
     return (
       <div>
@@ -19,6 +20,7 @@ const Homepage: React.FC = () => {
             <li>Plan your outfits with the calendar</li>
             <li>Track how confident your looks make you feel</li>
           </ul>
+          <button onClick={onNavigateToCalendar}>Go to Calendar</button>
         </section>
   
         <footer>

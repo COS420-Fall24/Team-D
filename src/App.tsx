@@ -14,9 +14,9 @@ const App: React.FC = () => {
       case 'login':
         return <Login onLogin={() => setCurrentPage('homepage')} />;
       case 'homepage':
-        return <Homepage />;
+        return <Homepage onNavigateToCalendar={() => setCurrentPage('calendar')} />;
       case 'calendar':
-        return <Calendar/>;
+        return <Calendar />;
       default:
         return <Login onLogin={() => setCurrentPage('homepage')} />;
     }
@@ -26,6 +26,8 @@ const App: React.FC = () => {
     <div>
       {renderPage()}
     </div>
+
+
   );
 };
 
