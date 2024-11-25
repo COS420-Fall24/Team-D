@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Login from './pages/Login'; 
 import Homepage from './pages/Homepage'
+import Calendar from './pages/calendar';
 
 
 
@@ -14,6 +15,8 @@ const App: React.FC = () => {
         return <Login onLogin={() => setCurrentPage('homepage')} />;
       case 'homepage':
         return <Homepage />;
+      case 'calendar':
+        return <Calendar/>;
       default:
         return <Login onLogin={() => setCurrentPage('homepage')} />;
     }
