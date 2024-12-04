@@ -11,11 +11,7 @@ const App: React.FC = () => {
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (user) {
-      navigate('/homepage');
-    }
-  }, [user, navigate]);
+
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
@@ -23,10 +19,10 @@ const App: React.FC = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={user ? <Navigate to="/homepage" replace /> : <Navigate to="/login" replace />} />
-        <Route path="/login" element={<Login onLogin={() => console.log('Login successful!')} />} />
-        <Route path="/homepage" element={<><Homepage /><TaskBar /></>} />
-        <Route path="/calendar" element={<><Calendar /><TaskBar /></>} />
+        <Route path="/" element={user ? <Navigate to="/Homepage" replace /> : <Navigate to="/Login" replace />} />
+        <Route path="/Login" element={<Login onLogin={() => console.log('Login successful!')} />} />
+        <Route path="/Homepage" element={<><Homepage /><TaskBar /></>} />
+        <Route path="/Calendar" element={<><Calendar /><TaskBar /></>} />
       </Routes>
     </div>
   );
