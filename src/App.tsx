@@ -3,7 +3,7 @@ import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from './firebase-config';
 import Homepage from './pages/Homepage';
-import Calendar from './pages/Calendar';
+import Calendar from './pages/calendar';
 import Login from './pages/Login';
 import TaskBar from './components/TaskBar';
 
