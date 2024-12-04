@@ -3,6 +3,7 @@ import { auth } from '../firebase-config'; // need to import db here
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 // import { doc, setDoc } from 'firebase/firestore'
 
+
 interface LoginProps {
   onLogin: () => void; // Callback to notify App when login succeeds
 }
@@ -28,10 +29,9 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
     <div className="login-container">
       {user ? (
         <>
-          <h1 className="login-title">Welcome to StyleNest</h1>
-          <p className="welcome-message">Hello, {user.user.displayName}!</p>
-          <button className="login-button" onClick={() => auth.signOut()}>
-            Sign Out
+          <h1 className="login-title">Login to StyleNest</h1>
+          <button className="login-button" onClick={handleSignIn}>
+            Sign In with Google
           </button>
         </>
       ) : (
