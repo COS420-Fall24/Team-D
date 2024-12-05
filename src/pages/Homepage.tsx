@@ -1,11 +1,13 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import WeatherComponent from "./WeatherPage"; // Import the weather component
 
 const Homepage: React.FC = () => {
   const navigate = useNavigate();
+  const [city, setCity] = useState<string>("Orono");
 
   const handleNavigate = () => {
-    navigate('/calendar');
+    navigate("/calendar");
   };
 
   return (
@@ -22,6 +24,12 @@ const Homepage: React.FC = () => {
           <li onClick={handleNavigate}>Plan your outfits with the calendar</li>
           <li>Track how confident your looks make you feel</li>
         </ul>
+      </section>
+
+      {/* Display the WeatherComponent */}
+      <section>
+        <h2>Current Weather</h2>
+        <WeatherComponent city={city} /> {/* Pass city to WeatherComponent */}
       </section>
 
       <footer>
