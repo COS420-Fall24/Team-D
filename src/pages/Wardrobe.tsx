@@ -1,32 +1,58 @@
 import React, { useState, useEffect } from 'react';
-import 
-import { AddClothingItem, clothingItem, MakeOutfit} from 
+import { AddClothingItem, MakeOutfit } from '../components';
+import { outfit, clothingItem} from '../models';
 
-//^import appropriate components for add/delete/edit clothItems/outfits
-
-const WardrobePage = () => {
-    const [clothingItems, setClothingItems] = useState([]);
-    const [outfits, setOutfits] = useState([]);
-    const [loading, setLoading] = useState(true);
-
-    //fetch data
-    useEffect(()) => {
-        const fetchclothingItems = async () => {
-            const items = await getClothingItems();
-                setClothingItems(items);
-        }
-
-        fetchclothingItems();
-
-    }
-
-    const handleAddOutfit = () => {
-        const newOutfit = { name: 'New Outfit', items: []}; 
-        addOutfit(newOutfit);
-        setOutfits([...oufits, newOutfit])
-    }
-
-
+interface ClothingItem {
+  id: string;
+  name: string;
+  type: string;
 }
 
-export default Wardrobe 
+interface Outfit {
+  id: string;
+  name: string;
+  items: ClothingItem[];
+}
+
+const WardrobePage = () => {
+  const [clothingItems, setClothingItems] = useState<ClothingItem[]>([]);
+  const [outfits, setOutfits] = useState<Outfit[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchClothingItems = async () => {
+      try {
+        const items = await fetchClothingItems(); 
+        setClothingItems(items);
+      } catch (error) {
+        console.error('Error fetching items:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchClothingItems();
+  }, []);
+
+  const handleAddOutfit = () => {
+    const newOutfit: Outfit = { 
+      id: Date.now().toString(),
+      name: 'New Outfit', 
+      items: []
+    }; 
+    setOutfits([...outfits, newOutfit]);
+  };
+
+  if (loading) return <div>Loading...</div>;
+
+  return (
+    <div>
+      <h1>My Wardrobe</h1>
+      <AddClothingItem />
+      <MakeOutfit />
+      {/* Add your components here */}
+    </div>
+  );
+};
+
+export default WardrobePage; 
