@@ -11,7 +11,7 @@ const TaskBar: React.FC = () => {
                 Homepage
             </button>
             <button className="task-bar-button" onClick={()=>navigate('/calendar')}>
-                calendar
+                Calendar
             </button>
             <button className="task-bar-button" onClick={()=>navigate('/Wardrobe')}>
                 Wardrobe
