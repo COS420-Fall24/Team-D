@@ -1,6 +1,7 @@
 import React from 'react'; // potentially import useEffect here
 import { auth } from '../firebase-config'; // need to import db here
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 // import { doc, setDoc } from 'firebase/firestore'
 
 
@@ -9,6 +10,7 @@ interface LoginProps {
 }
 
 const Login: React.FC<LoginProps> = ({ onLogin }) => {
+  const navigate = useNavigate();
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
 
   const handleSignIn = async () => {
@@ -16,6 +18,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
       await signInWithGoogle();
       if (auth.currentUser) {
         onLogin(); // Notify App that login was successful
+        navigate('/homepage')
       }
     } catch (error) {
       console.error(error);

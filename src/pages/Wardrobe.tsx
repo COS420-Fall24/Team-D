@@ -1,32 +1,66 @@
 import React, { useState, useEffect } from 'react';
-import 
-import { AddClothingItem, clothingItem, MakeOutfit} from 
+import { getClothingItems } from '../firebaseService';
 
-//^import appropriate components for add/delete/edit clothItems/outfits
+interface ClothingItem { // i know this is redundant but is needed in this case for typescripts safety
+    id: string | null;
+    name: string;
+    category: string;
+    tags: string[];
+    color: string;
+    size: string;
+    brand: string;
+    imageURL: string;
+    createdAt: string;
+    userID: string | null;
+  }
 
-const WardrobePage = () => {
-    const [clothingItems, setClothingItems] = useState([]);
-    const [outfits, setOutfits] = useState([]);
-    const [loading, setLoading] = useState(true);
+const WardrobePage: React.FC = () => {
+  const [clothingItems, setClothingItems] = useState<ClothingItem[]>([]);
+  const [loading, setLoading] = useState(true);
 
-    //fetch data
-    useEffect(()) => {
-        const fetchclothingItems = async () => {
-            const items = await getClothingItems();
-                setClothingItems(items);
-        }
+  // fetch clothing items on component mount
+  useEffect(() => {
+    const fetchClothingItems = async () => {
+      try {
+        setLoading(true);
+        const items: ClothingItem[] = await getClothingItems(); // fetch items from backend
+        const sortedItems = items.sort(
+          (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+        ); // sort by `createdAt`
+        setClothingItems(sortedItems);
+      } catch (error) {
+        console.error('Error fetching clothing items:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-        fetchclothingItems();
+    fetchClothingItems();
+  }, []);
 
-    }
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
-    const handleAddOutfit = () => {
-        const newOutfit = { name: 'New Outfit', items: []}; 
-        addOutfit(newOutfit);
-        setOutfits([...oufits, newOutfit])
-    }
+  return (
+    <div className="wardrobe-page">
+      <h1>Wardrobe</h1>
+      <div className="clothing-items">
+        {clothingItems.map((item) => (
+          <div key={item.id || Math.random()} className="clothing-item">
+            <img src={item.imageURL} alt={item.name} />
+            <p><strong>Name:</strong> {item.name}</p>
+            <p><strong>Category:</strong> {item.category}</p>
+            <p><strong>Color:</strong> {item.color}</p>
+            <p><strong>Size:</strong> {item.size}</p>
+            <p><strong>Brand:</strong> {item.brand}</p>
+            <p><strong>Tags:</strong> {item.tags.join(', ')}</p>
+            <p><strong>Added:</strong> {new Date(item.createdAt).toLocaleDateString()}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
-
-}
-
-export default Wardrobe 
+export default WardrobePage;
