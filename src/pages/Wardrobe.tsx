@@ -64,3 +64,4 @@ const WardrobePage: React.FC = () => {
 };
 
 export default WardrobePage;
+
