@@ -11,8 +11,6 @@ const App: React.FC = () => {
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
 
-
-
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
