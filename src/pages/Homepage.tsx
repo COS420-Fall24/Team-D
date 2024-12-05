@@ -29,7 +29,7 @@ const Homepage: React.FC = () => {
       {/* Display the WeatherComponent */}
       <section>
         <h2>Current Weather</h2>
-        <WeatherComponent city={city} /> {/* Pass city to WeatherComponent */}
+        <WeatherComponent city={city} /> {/* Pass city to Weather */}
       </section>
 
       <footer>
