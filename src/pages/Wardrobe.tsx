@@ -34,6 +34,32 @@ const WardrobePage = () => {
     fetchClothingItems();
   }, []);
 
+  const MenuBar = () => {
+    return (
+      <nav className="menu-bar">
+        <div className="search-container">
+          <input 
+            type="text" 
+            placeholder="Search outfits..." 
+            className="search-input"
+          />
+        </div>
+        <ul className="menu-actions">
+          <li>
+            <button onClick={() => handleAddOutfit()}>New Outfit</button>
+          </li>
+          <li>
+            <button>Add Item</button>
+          </li>
+          <li>
+            <button>Filter</button>
+          </li>
+        </ul>
+      </nav>
+    );
+  };
+  
+
   const handleAddOutfit = () => {
     const newOutfit: Outfit = { 
       id: Date.now().toString(),
@@ -43,53 +69,33 @@ const WardrobePage = () => {
     setOutfits([...outfits, newOutfit]);
   };
 
+  const Header = () => {
+    return (
+      <header>
+        <h1>StyleNest Your Wardrobe</h1>
+        <p>Create and organize your outfits!</p>
+        <nav>
+          <ul>
+            <li>All Items</li>
+            <li>Outfits</li>
+            <li>Categories</li>
+          </ul>
+        </nav>
+      </header>
+    );
+  };
+
   if (loading) return <div>Loading...</div>;
 
   return (
     <div>
+      <Header />
       <h1>My Wardrobe</h1>
       <AddClothingItem />
       <MakeOutfit />
-      {/* Add your components here */}
+      <MenuBar />
     </div>
   );
 };
-
-const Header = () => {
-  return (
-    <header>
-      <h1>StyleNest Your Wardobe</h1>
-      <p>Create and organize your outfits!</p>
-      <nav>
-        <ul>
-          <li>All Items</li>
-          <li>Outfits</li>
-          <li>Categories</li>
-        </ul>
-      </nav>
-    </header>
-  );
-};
-const MenuBar = () => {
-  return (
-    <nav className="menu-bar">
-      <ul>
-        <li>
-          <button>Add Item</button>
-        </li>
-        <li>
-          <button>Create Outfit</button>
-        </li>
-        <li>
-          <button>Filter</button>
-        </li>
-        <li>
-          <button>Sort</button>
-        </li>
-      </ul>
-    </nav>
-  );
-};
-
 
 export default WardrobePage; 
