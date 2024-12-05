@@ -2,7 +2,6 @@ import React from 'react';
 import { render, fireEvent, waitFor, screen } from '@testing-library/react';
 import Login from '../Login';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { auth } from '../../firebase-config';
 
 // Mock the necessary hooks and modules
 jest.mock('react-firebase-hooks/auth', () => ({
