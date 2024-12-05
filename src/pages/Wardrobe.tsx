@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { AddClothingItem, MakeOutfit } from '../components';
 import { outfit, clothingItem} from '../models';
+import { db } from "../firebase-config"
+
 
 interface ClothingItem {
   id: string;
