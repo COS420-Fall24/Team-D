@@ -1,39 +1,19 @@
-import { clothingItem } from './index';
+import { db } from '../firebase-config';
+import { doc, setDoc, deleteDoc, getDoc } from 'firebase/firestore';
 
-class Outfit {
-  constructor(id, name, items) {
-    this.id = id;
-    this.name = name;
-    this.items = items || [];
-  }
+/**
+ * @typedef {Object} outfit
+ * @property {string} id
+ * @property {string} name
+ * @property {Array<clothingItem>} items
+ */
 
-  addItem(item) {
-    if (this.items.length >= 4) {
-      throw new Error('Maximum 4 items allowed per outfit');
-    }
-    this.items.push(item);
-  }
-
-  removeItem(itemId) {
-    this.items = this.items.filter(item => item.id !== itemId);
-  }
-
-  toJSON() {
-    return {
-      id: this.id,
-      name: this.name,
-      items: this.items
-    };
-  }
-
-  static fromJSON(json) {
-    return new Outfit(json.id, json.name, json.items);
-  }
-
-  static create(name, items = []) {
-    const id = Date.now().toString();
-    return new Outfit(id, name, items);
-  }
-}
-
-export default Outfit;
+/**
+ * Creates a new outfit
+ * @param {string} name
+ * @param {Array<clothingItem>} items
+ * @returns {outfit}
+ */
+export const createOutfit = (name, items) => {
+  // implementation
+};

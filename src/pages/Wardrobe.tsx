@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import React, { useState, useEffect } from 'react';
 import { getClothingItems } from '../firebaseService';
 import './Wardrobe.css'; // Update this path if needed
@@ -74,3 +75,5 @@ const WardrobePage: React.FC = () => {
 export default WardrobePage;
 
 
+=======
+>>>>>>> Stashed changes
