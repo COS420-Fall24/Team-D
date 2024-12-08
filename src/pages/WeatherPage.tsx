@@ -18,7 +18,7 @@ const api = {
   base: "https://api.openweathermap.org/data/2.5/",
 };
 
-function App() {
+function WeatherPage() {
   const [search, setSearch] = useState("");
   const [weather, setWeather] = useState<Partial<Weather>>({});
 
@@ -69,4 +69,4 @@ function App() {
   );
 }
 
-export default App;
+export default WeatherPage;
