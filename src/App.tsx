@@ -32,6 +32,9 @@ const App: React.FC = () => {
         <Route path="/login" element={<Login onLogin={() => console.log('Login successful!')} />} />
         <Route path="/homepage" element={<><Homepage /><TaskBar /></>} />
         <Route path="/calendar" element={<><Calendar /><TaskBar /></>} />
+        <Route path="/weather" element={<><Weather /><TaskBar /></>} />
+        <Route path="/wardrobe" element={<><Wardrobe /><TaskBar /></>} />
+        <Route path="/collections" element={<><Collections /><TaskBar /></>} />
       </Routes>
     </div>
   );
