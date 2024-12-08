@@ -1,31 +1,67 @@
-.WeatherPage {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-  }
-  
-  body{
-    min-height: 100vh;
-    min-height: 100vw;
-    display:flex;
-    justify-content: left;
-    align-items: left;
-    flex-direction: column;
-    background-image: url("https://img-cdn.tnwcdn.com/image?fit=1280%2C720&url=https%3A%2F%2Fcdn0.tnwcdn.com%2Fwp-content%2Fblogs.dir%2F1%2Ffiles%2F2013%2F04%2FCloud.jpg&signature=7c98019c0fca7ff0c5d27c9a4c9a70ae");
-    background-repeat: no-repeat;
-    background-size: cover;
-  
-  }
 
-  .inputWrapper {
-    margin: 20px 0;
-  }
+/* App container styling */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  background-image: url("https://img-cdn.tnwcdn.com/image?fit=1280%2C720&url=https%3A%2F%2Fcdn0.tnwcdn.com%2Fwp-content%2Fblogs.dir%2F1%2Ffiles%2F2013%2F04%2FCloud.jpg&signature=7c98019c0fca7ff0c5d27c9a4c9a70ae");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #333;
+}
 
-  .weatherInfo {
-    margin-top: 20px;
-  }
+/* Input wrapper styling */
+.input-wrapper {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
 
-  .weatherDetail {
-    margin: 10px 0;
-  }
+.input-wrapper input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.input-wrapper button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.input-wrapper button:hover {
+  background-color: #0056b3;
+}
+
+/* Weather info styling */
+.weather-info {
+  margin-top: 20px;
+  background-color: rgba(255, 255, 255, 0.8); /* Slight transparency for better readability */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.weather-dettail {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.weather-dettail p {
+  font-weight: bold;
+  margin: 0;
+}
+
+.weather-dettail span {
+  color: #555;
+}
