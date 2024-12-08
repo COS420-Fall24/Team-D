@@ -16,6 +16,9 @@ const TaskBar: React.FC = () => {
             <button className="task-bar-button" onClick={()=>navigate('/Wardrobe')}>
                 Wardrobe
             </button>
+            <button className="task-bar-button" onClick={()=>navigate('/WeatherPage')}>
+                Weather
+            </button>
         </div>
     )
 }

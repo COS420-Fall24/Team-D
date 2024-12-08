@@ -6,6 +6,7 @@ import Homepage from './pages/Homepage';
 import Calendar from './pages/Calendar';
 import Login from './pages/Login';
 import TaskBar from './components/TaskBar';
+import Weather from './pages/WeatherPage';
 
 const App: React.FC = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -26,6 +27,7 @@ const App: React.FC = () => {
         <Route path="/login" element={<Login onLogin={() => console.log('Login successful!')} />} />
         <Route path="/homepage" element={<><Homepage /><TaskBar /></>} />
         <Route path="/calendar" element={<><Calendar /><TaskBar /></>} />
+        <Route path="/weather" element={<><Weather /><TaskBar /></>} />
       </Routes>
     </div>
   );

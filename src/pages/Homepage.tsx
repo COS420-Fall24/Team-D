@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+
 import { useNavigate } from "react-router-dom";
-import WeatherComponent from "./WeatherPage"; // Import the weather component
+
 
 const Homepage: React.FC = () => {
   const navigate = useNavigate();
-  const [city, setCity] = useState<string>("Orono");
 
   const handleNavigate = () => {
     navigate("/calendar");
@@ -26,12 +25,7 @@ const Homepage: React.FC = () => {
         </ul>
       </section>
 
-      {/* Display the WeatherComponent */}
-      <section>
-        <h2>Current Weather</h2>
-        <WeatherComponent city={city} /> {/* Pass city to Weather */}
-      </section>
-
+    
       <footer>
         <p>StyleNest &copy; 2024</p>
       </footer>
