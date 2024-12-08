@@ -1,11 +1,12 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+
+import { useNavigate } from "react-router-dom";
+
 
 const Homepage: React.FC = () => {
   const navigate = useNavigate();
 
   const handleNavigate = () => {
-    navigate('/calendar');
+    navigate("/calendar");
   };
 
   return (
@@ -24,6 +25,7 @@ const Homepage: React.FC = () => {
         </ul>
       </section>
 
+    
       <footer>
         <p>StyleNest &copy; 2024</p>
       </footer>

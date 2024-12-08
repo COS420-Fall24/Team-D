@@ -1,0 +1,31 @@
+.WeatherPage {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  
+  body{
+    min-height: 100vh;
+    min-height: 100vw;
+    display:flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: column;
+    background-image: url("https://img-cdn.tnwcdn.com/image?fit=1280%2C720&url=https%3A%2F%2Fcdn0.tnwcdn.com%2Fwp-content%2Fblogs.dir%2F1%2Ffiles%2F2013%2F04%2FCloud.jpg&signature=7c98019c0fca7ff0c5d27c9a4c9a70ae");
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+  }
+
+  .inputWrapper {
+    margin: 20px 0;
+  }
+
+  .weatherInfo {
+    margin-top: 20px;
+  }
+
+  .weatherDetail {
+    margin: 10px 0;
+  }

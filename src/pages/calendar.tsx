@@ -35,7 +35,6 @@ const Calendar: React.FC = () => {
 
   // Render the calendar with the appropriate rows and days
   const renderCalendar = (): JSX.Element[] => {
-    const daysOfWeek = getDaysOfWeek();
     const daysInMonth = getDaysInMonth(currentDate.getMonth() + 1, currentDate.getFullYear());
     const firstDay = getFirstDayOfMonth(currentDate.getMonth(), currentDate.getFullYear());
 

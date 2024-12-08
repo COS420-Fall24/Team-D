@@ -4,14 +4,14 @@
     width: 100%;
     display: flex;
     justify-content: space-around;
-    background-color: black;
+    background-color: white;
     border-top: 1px solid #ccc;
     padding: 10px 0;
     z-index:1000;
 }
 
 .task-bar-button{
-    background-color: rgb(28, 28, 28);
+    background-color: rgb(208, 192, 192);
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px 20px;
