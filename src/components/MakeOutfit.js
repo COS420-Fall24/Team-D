@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import { outfit } from '../models';
-import { db } from '../firebase-config';
-import { doc, setDoc } from 'firebase/firestore';
+import { createOutfit } from '../models';
 
 const MakeOutfit = ({ availableItems, onOutfitCreated, onCancel }) => {
   const [selectedItems, setSelectedItems] = useState([]);
@@ -30,14 +28,11 @@ const MakeOutfit = ({ availableItems, onOutfitCreated, onCancel }) => {
       return;
     }
 
-    // Create the outfit object
-    const newOutfit = Outfit.create(outfitName, selectedItems);
-
     try {
-      // Save the new outfit to Firestore
-      await newOutfit.saveToFirestore();
-      onOutfitCreated(newOutfit); // Notify the parent component of the new outfit
-      onCancel(); // Close the form or reset state
+      // Create the outfit using the exported function
+      const newOutfit = createOutfit(outfitName, selectedItems);
+      onOutfitCreated(newOutfit);
+      onCancel();
     } catch (error) {
       console.error('Error creating outfit:', error);
       alert('Failed to create outfit');

@@ -14,29 +14,22 @@ import ErrorBoundary from './components/ErrorBoundary'
 
 const App: React.FC = () => {
   const [user, loading, error] = useAuthState(auth);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (user) {
-      navigate('/homepage');
-    }
-  }, [user, navigate]);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
   return (
-    <div>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={user ? <Navigate to="/homepage" replace /> : <Navigate to="/login" replace />} />
         <Route path="/login" element={<Login onLogin={() => console.log('Login successful!')} />} />
         <Route path="/homepage" element={<><Homepage /><TaskBar /></>} />
         <Route path="/calendar" element={<><Calendar /><TaskBar /></>} />
-        <Route path="/weather" element={<><Weather /><TaskBar /></>} />
+        <Route path="/WeatherPage" element={<><Weather /><TaskBar /></>} />
         <Route path="/wardrobe" element={<><Wardrobe /><TaskBar /></>} />
         <Route path="/collections" element={<><Collections /><TaskBar /></>} />
       </Routes>
-    </div>
+    </BrowserRouter>
   );
 };
 
