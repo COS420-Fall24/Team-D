@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from './firebase-config';
 import Homepage from './pages/Homepage';
@@ -9,6 +9,8 @@ import TaskBar from './components/TaskBar';
 import Weather from './pages/WeatherPage';
 import Wardrobe from './pages/Wardrobe';
 import Collections from './pages/Collections';
+import ErrorBoundary from './components/ErrorBoundary'
+
 
 const App: React.FC = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -16,6 +18,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     if (user) {
+      navigate('/homepage');
     }
   }, [user, navigate]);
 
@@ -25,13 +28,10 @@ const App: React.FC = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={user ? <Navigate to="/login" replace /> : <Navigate to="/homepage" replace />} />
+        <Route path="/" element={user ? <Navigate to="/homepage" replace /> : <Navigate to="/login" replace />} />
         <Route path="/login" element={<Login onLogin={() => console.log('Login successful!')} />} />
         <Route path="/homepage" element={<><Homepage /><TaskBar /></>} />
-        <Route path="/collections" element={<><Collections /><TaskBar /></>} />
         <Route path="/calendar" element={<><Calendar /><TaskBar /></>} />
-        <Route path="/wardrobe" element={<><Wardrobe /><TaskBar /></>} />
-        <Route path="/weather" element={<><Weather /><TaskBar /></>} />
       </Routes>
     </div>
   );

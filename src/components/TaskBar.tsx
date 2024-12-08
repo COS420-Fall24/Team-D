@@ -7,20 +7,11 @@ const TaskBar: React.FC = () => {
     const navigate = useNavigate();
     return (
         <div className="task-bar">
-            <button className="task-bar-button" onClick={()=> navigate('/homepage')}>
+            <button className="task-bar-button" onClick={()=> navigate('/Homepage')}>
                 Homepage
             </button>
-            <button className="task-bar-button" onClick={()=>navigate('/collections')}>
-                Collections
-            </button>
-            <button className="task-bar-button" onClick={()=>navigate('/calendar')}>
+            <button className="task-bar-button" onClick={()=>navigate('/Calendar')}>
                 Calendar
-            </button>
-            <button className="task-bar-button" onClick={()=>navigate('/Wardrobe')}>
-                Wardrobe
-            </button>
-            <button className="task-bar-button" onClick={()=>navigate('/WeatherPage')}>
-                Weather
             </button>
         </div>
     )
