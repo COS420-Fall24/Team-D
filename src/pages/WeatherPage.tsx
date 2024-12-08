@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './WeatherPage.module.css'
+import './WeatherPage.css'
 
 
 type Weather = {
