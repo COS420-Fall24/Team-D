@@ -1,17 +1,30 @@
+import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import { uploadBytesResumable, getDownloadURL } from 'firebase/storage';
+import { getStorage, ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 import AddClothingItem from './AddClothingItem';
 import { db } from '../firebase-config';
 
 // Mock Firebase storage and Firestore
-jest.mock('firebase/storage');
+jest.mock('firebase/storage', () => ({
+  getStorage: jest.fn(),
+  ref: jest.fn(),
+  uploadBytesResumable: jest.fn(),
+  getDownloadURL: jest.fn(),
+}));
+
 jest.mock('../firebase-config', () => ({
   db: {
     collection: jest.fn(() => ({
-      add: jest.fn().mockResolvedValue('mockDocumentId'), // Mock a successful add call
+      add: jest.fn().mockResolvedValue('mockDocumentId'),
     })),
   },
 }));
+
+jest.mock('../models/clothingItem', () => {
+  return function DummyClothingItem(data) {
+    return data;
+  };
+});
 
 describe('AddClothingItem', () => {
   beforeAll(() => {
@@ -31,7 +44,6 @@ describe('AddClothingItem', () => {
     window.alert = jest.fn();
   });
 
-  // Test 1: Basic render test
   test('renders form with all required fields', () => {
     render(<AddClothingItem />);
 
@@ -52,7 +64,6 @@ describe('AddClothingItem', () => {
     expect(screen.getByLabelText('Upload Image')).toBeInTheDocument();
   });
 
-  // Test 2: Form input handling
   test('handles form input changes correctly', () => {
     render(<AddClothingItem />);
 
@@ -72,7 +83,6 @@ describe('AddClothingItem', () => {
     });
   });
 
-  // Test 3: Form submission with file
   test('handles file upload and form submission', async () => {
     render(<AddClothingItem />);
 
@@ -89,11 +99,21 @@ describe('AddClothingItem', () => {
     // Submit the form
     fireEvent.click(screen.getByRole('button', { name: 'Save Clothing Item' }));
 
-    // Wait for async operations to complete
     await waitFor(() => {
-      expect(uploadBytesResumable).toHaveBeenCalled(); // Ensure upload was triggered
-      expect(db.collection).toHaveBeenCalledWith('ClothingItems'); // Ensure correct Firestore collection
-      expect(db.collection().add).toHaveBeenCalled(); // Ensure document was added
+      expect(uploadBytesResumable).toHaveBeenCalled();
+      expect(db.collection).toHaveBeenCalledWith('ClothingItems');
+      expect(db.collection().add).toHaveBeenCalled();
+      expect(window.alert).toHaveBeenCalledWith('Clothing item added successfully');
+    });
+  });
+
+  test('prevents submission when required fields are empty', async () => {
+    render(<AddClothingItem />);
+    
+    fireEvent.click(screen.getByRole('button', { name: 'Save Clothing Item' }));
+    
+    await waitFor(() => {
+      expect(window.alert).toHaveBeenCalledWith('Please upload an image');
     });
   });
 });
