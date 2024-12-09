@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { AddClothingItem } from '../components';
-import MakeOutfit from '../components/MakeOutfit';
+import { AddClothingItem, MakeOutfit } from '../components';
 import { clothingItem, outfit } from '../models';
 import { db } from "../firebase-config";
 import './Collections.css';
@@ -85,7 +84,7 @@ const CollectionsPage = () => {
             />
           </div>
           <div className="action-buttons">
-            <button onClick={handleAddOutfit}>New Outfit</button>
+            <button>New Outfit</button>
             <button>Add Item</button>
           </div>
         </div>

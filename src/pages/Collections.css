@@ -1,10 +1,3 @@
-.body {
-  background-color: #ffffff;  /* Light pink background */
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;  /* Prevent horizontal scroll */
-  width: 100%;
-}
 
 .search-input {
   padding: 0.5rem;
@@ -37,7 +30,7 @@
   border-bottom: 1px solid #eee;
   z-index: 1000;
   max-width: 100%;
-  box-sizing: border-box;  /* Include padding in width calculation */
+  box-sizing: border-box;  
 }
   
 .header-content {
@@ -87,11 +80,11 @@
 }
   
 .navigation-container {
-  margin-left: auto;  /* Pushes navigation to the right */
+  margin-left: auto; 
 }
   
 .navigation-container nav ul {
-  list-style: none;  /* Removes bullet points */
+  list-style: none; 
   padding: 0;
   margin: 0;
   display: flex;
@@ -104,16 +97,16 @@
 }
   
 .navigation-container nav li a {
-  color: #333;            /* Change text color */
-  text-decoration: none;  /* Removes underline */
+  color: #333;           
+  text-decoration: none;  
   padding: 5px 10px;
-  font-size: 16px;       /* Change font size */
-  font-weight: normal;   /* Change font weight */
-  cursor: pointer;       /* Shows pointer on hover */
+  font-size: 16px;    
+  font-weight: normal;  
+  cursor: pointer;       
 }
   
 .navigation-container nav li a:hover {
-  color: #666;           /* Change hover color */
+  color: #666;           
 }
   
 .main-content {
@@ -123,7 +116,7 @@
   padding-bottom: 40px;
   background-color: #8eaf8e;
   width: 100%;
-  overflow-x: hidden;  /* Prevent horizontal scroll */
+  overflow-x: hidden; 
 }
   
 .top-navigation {

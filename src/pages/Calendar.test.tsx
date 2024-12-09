@@ -1,7 +1,7 @@
 // Calendar.test.tsx
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import Calendar from './Calendar';
+import Calendar from './calendar';
 
 // Mock the Date object to control the current date during tests
 const mockDate = new Date(2024, 11, 8); // December 8th, 2024
