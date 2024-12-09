@@ -131,7 +131,8 @@ const AddClothingItem = () => {
               value={formData.brand}
               onChange={handleChange}
             />
-            <input type="file" onChange={handleFileChange} required />
+            <label htmlFor="file-upload">Upload Image</label>
+            <input id="file-upload" type="file" onChange={handleFileChange} required />
             <button type="submit" disabled={isSubmitting}>
               {isSubmitting ? "Saving..." : "Save Clothing Item"}
             </button>
@@ -141,6 +142,4 @@ const AddClothingItem = () => {
       );
     };
     
-    
-    export default AddClothingItem;
-    
+export default AddClothingItem;
