@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import CollectionsPage from './Collections';
 import { getDocs } from 'firebase/firestore';
@@ -16,13 +16,7 @@ jest.mock('firebase/firestore', () => ({
 
 describe('CollectionsPage', () => {
   beforeEach(() => {
-    // Mock Firebase response
-    (getDocs as jest.Mock).mockResolvedValue({
-      docs: []
-    });
-  });
-
-  afterEach(() => {
+    // Clear all mocks before each test
     jest.clearAllMocks();
   });
 
@@ -33,11 +27,23 @@ describe('CollectionsPage', () => {
     expect(titleElement).toBeInTheDocument();
   });
 
-  // Test 2: Verify at least one button is present
+  // Test 2: Verify New Outfit button is present
   test('displays New Outfit button', async () => {
     render(<CollectionsPage />);
-    // Wait for loading to complete
-    const button = await screen.findByText('New Outfit');
-    expect(button).toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.getByText('New Outfit')).toBeInTheDocument();
+    });
+  });
+
+  // Test 3: Verify Add Item button is present and clickable
+  test('displays Add Item button and it is clickable', async () => {
+    render(<CollectionsPage />);
+    const addItemButton = await screen.findByText('Add Item');
+    expect(addItemButton).toBeInTheDocument();
+
+    // Simulate a click event
+    fireEvent.click(addItemButton);
+
+    // You can add more assertions here if clicking the button triggers any specific behavior
   });
 }); 
