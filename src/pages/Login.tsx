@@ -2,7 +2,7 @@ import React from 'react'; // potentially import useEffect here
 import { auth } from '../firebase-config'; // need to import db here
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
-// import { doc, setDoc } from 'firebase/firestore'
+import './Login.css';
 
 
 interface LoginProps {
