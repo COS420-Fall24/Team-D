@@ -1,11 +1,10 @@
 import React from 'react';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { MemoryRouter } from 'react-router-dom';
-import { act } from 'react-dom/test-utils';
 import AddClothingItem from './AddClothingItem';
-import { getStorage, ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
-import { db, auth } from '../firebase-config';
+import { act } from 'react-dom/test-utils';
+import { uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 
 jest.mock('firebase/storage', () => ({
   getStorage: jest.fn(),
